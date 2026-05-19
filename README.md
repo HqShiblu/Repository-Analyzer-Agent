@@ -1,4 +1,4 @@
-# Codebase Research Agent
+# Repository Analyzer Agent
 
 A Django REST Framework AI agent that accepts a public GitHub repository URL and a
 natural-language question, intelligently traverses the codebase using the GitHub
