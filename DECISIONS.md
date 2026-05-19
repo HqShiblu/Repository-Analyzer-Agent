@@ -1,6 +1,26 @@
 
 # DECISIONS.md
 
+## Architecture Overview
+
+The agent works in four major steps-
+
+```
+cache  →  llm_knowledge  →  readme_scan  →  directory_traversal
+```
+
+**Cache:** Answer questions from local database that matches previous user queries.
+
+**LLM Knowledge:** If the answer is already known to the LLM then get the answer from the LLM itself.
+
+**Readme scan:** Read the README.md and relevant files to get the summary of the repository.
+
+**Directory Traversal:** Get directory tree from GitHub API, try to detect endpoints and then go method by method.
+
+The agent has access to the tools that access the database, list the directories, reads files, detects methods from specific programming language etc.
+A hard limit can be set in .env file so that the agent doesn't run forever. 
+
+
 ## Design Decisions
 
 **1.** Remove trailing slash of repository.
@@ -60,7 +80,17 @@ sessions.
   when the agent calls `read_file` on the same path twice.
 - Add an admin dashboard to browse sessions, findings and tool call logs without needing to query the database directly.
 
----
+
+## Use of AI Coding Tools
+
+The 17 points mentioned in `Design Decisions` had been prepared by me.
+I provided the main requirements and along with my own findings to Claude web (currently Sonnet 4.6).
+Then, I generated a SPECS.md file from the requierements.
+After that, I gave the SPECS.md file to Cursor with Claude 4.7 selected.
+After creating the project I immediately switched to Composer 2 model in Cursor since it uses less tokens.
+
+The project mostly worked, I just had to tweak some token count and tool calling log.
+
 
 ## Known Limitations
 

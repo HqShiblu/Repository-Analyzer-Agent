@@ -10,7 +10,7 @@ The pipeline cost-ladders questions through four progressively more expensive
 sources before doing real work:
 
 ```
-cache  →  llm_knowledge  →  readme_scan  →  full_traversal
+cache  →  llm_knowledge  →  readme_scan  →  directory_traversal
 ```
 
 See [`DECISIONS.md`](./DECISIONS.md) for design decisions (including the four-model
