@@ -1,0 +1,163 @@
+
+Sample Request:
+{
+    "repository_url": "https://github.com/tiangolo/fastapi",
+    "question": "How does FastAPI handle dependency injection internally?"
+}
+
+Sample Response:
+{
+	"session_id": "a0973e11-bba6-4dcd-9766-e7e88c37469f",
+	"repository_url": "https://github.com/tiangolo/fastapi",
+	"question": "How does FastAPI handle dependency injection internally?",
+	"answer": "FastAPI's dependency injection is handled in the fastapi/dependencies package. Dependencies are declared with fastapi.params.Depends. When a route is added, fastapi/dependencies/utils.get_dependant constructs a Dependant object that represents the dependency graph (including sub‑dependencies, security scopes, and yield‑based cleanup). At request time, fastapi/dependencies/utils.solve_dependencies (or its async variant) traverses this graph, invoking each dependency (awaiting async ones) and storing the results in dependant.cache so each dependency is resolved once per request. The resolved values are then injected into the endpoint function. The system also supports async generators, context managers, and re‑uses cached values across nested dependencies. Key implementation files: fastapi/params.py (Depends class), fastapi/dependencies/models.py (Dependant, SecurityScopes), fastapi/dependencies/utils.py (get_dependant, solve_dependencies, solve_dependencies_async).",
+	"source": "llm_knowledge",
+	"references": [],
+	"token_usage": {
+		"prompt_tokens": 163,
+		"completion_tokens": 780,
+		"total_tokens": 943
+	},
+	"created_at": "2026-05-18T17:55:05.313010+00:00",
+	"completed_at": "2026-05-18T17:55:53.091295+00:00"
+}
+
+Sample Request:
+{
+    "repository_url": "https://github.com/celery/celery",
+    "question": "Where is task retry logic implemented, and what backoff strategies are supported?"
+}
+
+Sample Response:
+{
+	"session_id": "21cf6907-67d0-4582-b6d1-9c8b2a5e5efd",
+	"repository_url": "https://github.com/celery/celery",
+	"question": "Where is task retry logic implemented, and what backoff strategies are supported?",
+	"answer": "Task retry logic is implemented in celery/app/task.py within the Task.retry method. Celery supports fixed‑interval retries (the default), exponential backoff (configured with retry_backoff, retry_backoff_max, and retry_jitter), and custom backoff intervals via retry_policy (interval_start, interval_step, interval_backoff).",
+	"source": "llm_knowledge",
+	"references": [],
+	"token_usage": {
+		"prompt_tokens": 168,
+		"completion_tokens": 774,
+		"total_tokens": 942
+	},
+	"created_at": "2026-05-18T17:58:31.972605+00:00",
+	"completed_at": "2026-05-18T17:59:57.002473+00:00"
+}
+
+
+Sample Request:
+{
+    "repository_url": "https://github.com/HqShiblu/tech-pricing-scraper",
+    "question": "Name the websites that it is scraping"
+}
+
+Sample Response:
+{
+	"session_id": "572bdb5f-b0bb-4c87-8418-d4c91f35bd6b",
+	"repository_url": "https://github.com/HqShiblu/tech-pricing-scraper",
+	"question": "Name the websites that it is scraping",
+	"answer": "The scraper targets the following e-commerce websites:\n\n1. **Startech** – `https://www.startech.com.bd` (scrapeStartech function) [[server.js:27-75]]\n2. **Techland** – `https://www.techlandbd.com` (scrapeTechland function) [[server.js:77-121]]\n3. **Ryans** – `https://www.ryans.com` (scrapeRyans function) [[server.js:123-164]]\n4. **Computer Village** – `https://www.computervillage.com.bd` (scrapeComputerVillage function) [[server.js:166-210]]\n5. **Smart BD** – `https://smartbd.com` (scrapeSmartTech function) [[server.js:212-252]]\n6. **ComputerMania** – `https://computermania.com.bd` (scrapeCompterMania function) [[server.js:254-298]]\n7. **PC House** – `https://www.pchouse.com.bd` (scrapePCHouse function) [[server.js:300-340]]\n8. **Pickaboo** – `https://www.pickaboo.com` (scrapePickaboo function) [[server.js:342-381]]\n9. **GadStyle** – `https://www.gadstyle.com` (scrapeGadStyle function) [[server.js:383-423]]\n10. **Gadget and Gear** – `https://gadgetandgear.com` (scrapeGadgetAndGear function) [[server.js:425-460]]\n11. **TV Hut** – `https://www.tvhut.com.bd` (scrapeTVHut function) [[server.js:462-512]]\n\nEach function constructs a search URL specific to the site, parses the HTML (or JSON) response, extracts product details, and emits results via a socket. The `source` field in the scraped data matches the logo filenames in the `public/logo/` directory (e.g., `star_tech.jpg`, `tech_land.jpg`, etc.), confirming the sites. [[server.js:27-512]]",
+	"source": "full_traversal",
+	"references": [
+		{
+			"file_path": "server.js",
+			"line_start": 27,
+			"line_end": 75,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 77,
+			"line_end": 121,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 123,
+			"line_end": 164,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 166,
+			"line_end": 210,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 212,
+			"line_end": 252,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 254,
+			"line_end": 298,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 300,
+			"line_end": 340,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 342,
+			"line_end": 381,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 383,
+			"line_end": 423,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 425,
+			"line_end": 460,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 462,
+			"line_end": 512,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		},
+		{
+			"file_path": "server.js",
+			"line_start": 27,
+			"line_end": 512,
+			"note": "Contains multiple scraping functions for e-commerce websites: Startech, Techland, Ryans, Computer Village, Smart BD, ComputerMania, PC House, Pickaboo, GadStyle, Gadget and Gear, TV Hut."
+		}
+	],
+	"token_usage": {
+		"prompt_tokens": 87774,
+		"completion_tokens": 5105,
+		"total_tokens": 92879
+	},
+	"created_at": "2026-05-18T18:00:58.316675+00:00",
+	"completed_at": "2026-05-18T18:06:27.664367+00:00"
+}
+
+Tool Calls:
+[Tool Call 1/30] get_directory_tree |  tokens this round: 1,799
+[Tool Call 2/30] get_file_outline (server.js) |  tokens this round: 1,921
+[Tool Call 3/30] get_previous_findings |  tokens this round: 2,806
+[Tool Call 4/30] read_method (server.js, scrapeStartech) |  tokens this round: 2,710
+[Tool Call 5/30] read_method (server.js, scrapeTechland) |  tokens this round: 3,495
+[Tool Call 6/30] read_method (server.js, scrapeRyans) |  tokens this round: 3,963
+[Tool Call 7/30] read_method (server.js, scrapeComputerVillage) |  tokens this round: 4,766
+[Tool Call 8/30] read_method (server.js, scrapeSmartTech) |  tokens this round: 5,345
+[Tool Call 9/30] read_method (server.js, scrapeCompterMania) |  tokens this round: 6,044
+[Tool Call 10/30] read_method (server.js, scrapePCHouse) |  tokens this round: 6,776
+[Tool Call 11/30] read_method (server.js, scrapePickaboo) |  tokens this round: 7,604
+[Tool Call 12/30] read_method (server.js, scrapeGadStyle) |  tokens this round: 7,726
+[Tool Call 13/30] read_method (server.js, scrapeGadgetAndGear) |  tokens this round: 8,203
+[Tool Call 14/30] read_method (server.js, scrapeTVHut) |  tokens this round: 9,033
+[Tool Call 15/30] save_finding (server.js) |  tokens this round: 9,994
+
+Total tokens used: 92,632
+

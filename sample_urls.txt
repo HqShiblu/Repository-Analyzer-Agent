@@ -1,0 +1,5 @@
+
+https://github.com/tiangolo/fastapi
+https://github.com/celery/celery
+https://github.com/HqShiblu/tech-pricing-scraper
+
