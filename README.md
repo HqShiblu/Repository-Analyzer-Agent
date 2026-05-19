@@ -98,8 +98,8 @@ Detail and field lists: **[Database Schema in SPECS.md](./SPECS.md#database-sche
 ### 1. Clone & create a virtual environment
 
 ```bash
-git clone <this-repo-url>
-cd "CodeFusion Chat API"
+git clone https://github.com/HqShiblu/Repository-Analyzer-Agent
+cd "Repository-Analyzer-Agent"
 python -m venv .venv
 # Windows PowerShell:
 .\.venv\Scripts\Activate.ps1
