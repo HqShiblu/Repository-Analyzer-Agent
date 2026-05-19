@@ -1,0 +1,19 @@
+
+Tool Calls:
+[Tool Call 1/30] get_directory_tree |  tokens this round: 1,799
+[Tool Call 2/30] get_file_outline (server.js) |  tokens this round: 1,921
+[Tool Call 3/30] get_previous_findings |  tokens this round: 2,806
+[Tool Call 4/30] read_method (server.js, scrapeStartech) |  tokens this round: 2,710
+[Tool Call 5/30] read_method (server.js, scrapeTechland) |  tokens this round: 3,495
+[Tool Call 6/30] read_method (server.js, scrapeRyans) |  tokens this round: 3,963
+[Tool Call 7/30] read_method (server.js, scrapeComputerVillage) |  tokens this round: 4,766
+[Tool Call 8/30] read_method (server.js, scrapeSmartTech) |  tokens this round: 5,345
+[Tool Call 9/30] read_method (server.js, scrapeCompterMania) |  tokens this round: 6,044
+[Tool Call 10/30] read_method (server.js, scrapePCHouse) |  tokens this round: 6,776
+[Tool Call 11/30] read_method (server.js, scrapePickaboo) |  tokens this round: 7,604
+[Tool Call 12/30] read_method (server.js, scrapeGadStyle) |  tokens this round: 7,726
+[Tool Call 13/30] read_method (server.js, scrapeGadgetAndGear) |  tokens this round: 8,203
+[Tool Call 14/30] read_method (server.js, scrapeTVHut) |  tokens this round: 9,033
+[Tool Call 15/30] save_finding (server.js) |  tokens this round: 9,994
+
+Total tokens used: 92,632
